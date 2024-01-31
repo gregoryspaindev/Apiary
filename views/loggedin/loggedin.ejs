@@ -1,0 +1,15 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <main>
+    <h1>Logged In</h1>
+    <h2>Create Hive</h2>
+    <form action="/create-hive" method="post" id="create-hive-form">
+      <label for="hiveName">Hive Name:</label>
+      <input type="text" name="hiveName" id="hiveName">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <button type="submit">Create Hive</button>
+    </form>
+  </main>
+  <%- include('../includes/end.ejs') %>

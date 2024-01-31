@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <ul>
+      <li><a href="/" class="<%= path === '/' ? 'active' : '' %>">Home</a></li>
+      <li><a href="/loggedin" class="<%= path === '/loggedin' ? 'active' : '' %>">Log In</a></li>
+      <li>
+        <form action="loggedin/logout" method="post">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button type="submit">Logout</button>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</header>
