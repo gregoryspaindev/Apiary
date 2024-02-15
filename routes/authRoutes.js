@@ -12,7 +12,7 @@ router.post('/signup',
     check('email')
       .isEmail()
       .withMessage('Please enter a valid email.')
-      .custom((value, { req }) => {
+      .custom((value, { req, res, next }) => {
         // check for user with the provided email. If one exists, redirect user to home page.
         return User.findOne({ email: value })
           .then(userDoc => {
@@ -20,7 +20,7 @@ router.post('/signup',
               // send a message with the request that will be removed from subsequent requests
               return Promise.reject('User already exists with the provided email.')
             }
-            return res.redirect('/');
+            //return res.redirect('/');
           })
         }),
     body('password', 'Please enter a valid password.')

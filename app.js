@@ -20,7 +20,7 @@ const authRoutes = require('./routes/authRoutes');
 const hiveRoutes = require('./routes/hiveRoutes');
 
 // as named, constant storing MongoDB connection URI
-const MONGODB_URI = 'mongodb+srv://spaing3850:gnK5jKysBrnMMxl6@cluster0.edkdam5.mongodb.net/apiary?&w=majority';
+const MONGODB_URI = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.4';
 
 // create express function instance
 const app = express();
